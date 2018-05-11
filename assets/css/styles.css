@@ -379,7 +379,7 @@ div.footer1 {
 .clear {
     clear: both;
 }
-.clearfix::after {
+.clearfix:after {
     clear: both;
     content: '';
     display: block;
