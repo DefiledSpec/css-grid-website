@@ -14,6 +14,7 @@ body {
 #wrapper {
     top: 0;
     width: 90%;
+    max-width: 1000px;
     margin: 0 auto;
     background: ghostwhite;
 }
@@ -193,13 +194,29 @@ p#tableMobile { display: none; }
 footer { text-align: center; }
 
 /* Bottom Nav on "How-To" */
-nav#bottom-nav { height: max-content; }
+nav#bottom-nav {
+    height: 3em;
+    background: #709abb;
+    line-height: 3em;
+
+}
 nav#bottom-nav a {
     padding: .5em 1.5em;
-    font-size: 1.5em;
-    background: lightblue;
+    font-size: 1.1em;
     margin: 0;
+    text-decoration: none;
+    color: #2c323c;
+    font-weight: bold;
+    border-left: 1px solid rgba(0, 0, 0, .5);
 }
+nav#bottom-nav a:last-of-type {
+    border-right: 1px solid rgba(0, 0, 0, .5);
+}
+#bottom-nav a:hover {
+    color: ghostwhite;
+    background: rgba(0,0,0,0.5);
+}
+
 #emailLink, #download {
     display: block;
     width: max-content;
