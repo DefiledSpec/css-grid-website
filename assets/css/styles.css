@@ -81,6 +81,11 @@ dl dt {
     font-weight: bold;
 }
 
+ol {
+    margin-top: 2em;
+    padding-left: 1em;
+}
+
 /* Table */
 table {
     margin: 2em;
@@ -133,15 +138,29 @@ div.code-html {
     border-left: 4px solid rgba(0, 0, 200, 0.8);
 }
 
-
 /* Images */
 img {
     display: block;
     height: auto;
     max-width: 100%;
 }
-img::after {
-    clear: both;
+/*img::after {*/
+    /*clear: both;*/
+/*}*/
+figure#jccc {
+    margin:  1em auto;
+    padding: 1em;
+    width: max-content;
+    max-width: 100%;
+    float: right;
+}
+figcaption {
+
+    font-style: italic;
+    font-size: 0.8em;
+}
+figure#jccc img {
+    max-width: 100%;
 }
 
 img#newsletter {
@@ -207,7 +226,6 @@ a:active {
 
 }
 
-
 /* Page Top */
 .pageTop {
     width: max-content;
@@ -222,10 +240,6 @@ a:active {
 .text-bold {
     font-weight: bold;
 }
-
-
-
-
 
 /* Span that highlights css properties */
 span.css-property {
@@ -269,7 +283,6 @@ span.html:after {
     content: '-->';
 }
 
-
 /* Example Styles for showing grids */
 section.code {
     border-top: black 3px solid;
@@ -280,14 +293,6 @@ section.code {
 section.code header {
     text-align: center;
 }
-/* Back to top button need to figure out how to make this work? */
-/*section.code::after {*/
-    /*clear: both;*/
-    /*display: block;*/
-    /*width: max-content;*/
-    /*margin: .5em auto;*/
-    /*content: 'Back To Top';*/
-/*}*/
 
 /* Example Cell Styles */
 .cell {
@@ -386,13 +391,20 @@ div.footer1 {
     nav#main-nav ul li a{
          padding: 1em;
     }
+    figure#jccc {
+        /*display: none;*/
+        float: none;
+    }
+
     img#columnLines {
         float: none;
         margin-bottom: 1em;
     }
     p#columnLinesP {
         margin-top: 1.25em;
-
+    }
+    img#jccc {
+        float: none;
     }
     img#gridTerms {
         float: none;
@@ -409,8 +421,6 @@ div.footer1 {
         height: max-content;
         /*border: red 1px solid;*/
     }
-
-
     nav#main-nav ul {
         width: 100%;
         /*border: red 1px solid;*/
@@ -438,9 +448,6 @@ div.footer1 {
     section.code {
         padding: 0;
     }
-
-
-
     footer {
         font-size: .6em;
     }
