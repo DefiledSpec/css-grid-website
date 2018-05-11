@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<!-- Jesse Harrah 5/11/18 -->
+<html lang="en">
+<head>
+    <title>CSS Grid :: How-To</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css"/>
+    <link rel="stylesheet" href="../css/finalprint.css" media="print">
+    
+    
+    
+    <style>
+    
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="hero">
+            <h1 id="hero-title">CSS Grid <i class="fas fa-th"></i></h1>
+            <h3 id="hero-subtitle">A CSS Layout Tool</h3>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">How-To</a></li>
+                    <li><a href="courseObj.html">Course Objectives</a></li>
+                    <li><a href="credits.html">Credits</a></li>
+                    <li><a href="form.html">Contact Us</a></li>
+                </ul>
+                <br id="navClear" class="clear" />
+            </nav>
+        </header>
+        <main class="clear">
+            <h1 class="text-center text-bold">Learn CSS Grid</h1>
+            <section id="tableOfContents" class="small-centered">
+                <h2>Page Contents</h2>
+                <ol>
+                    <li><a href="#gridTerms">Grid Terminology</a></li>
+                    <li><a href="#sec2">Defining a Grid</a></li>
+                    <li><a href="#sec3">Defining Grid Columns</a></li>
+                    <li><a href="#sec4">Defining Grid Rows</a></li>
+                    <li><a href="#sec5">Defining Grid &rsquo;Padding&lsquo;</a></li>
+                    <li><a href="#sec6">Positioning Items With Grid Areas</a></li>
+                    <li><a href="#sec7">Positioning Items by Columns and Rows</a></li>
+                    <li><a href="#cheatSheet">Grid Cheat Sheet</a></li>
+                </ol>
+            </section>
+            <section id="main-section">
+                <img id="gridTerms" src="../img/css-grid-terminology.png" alt="" width="200" />
+                <h3>Grid Terminology</h3>
+                <dl>
+                    <dt>Grid Area</dt>
+                        <dd>- A grid cell or group of cells that the developer names within the grid.</dd>
+                    <dt>Grid Track</dt>
+                        <dd>- Grid tracks are each of the columns and rows.</dd>
+                    <dt>Grid Cell</dt>
+                        <dd>- An individual cell within the grid.</dd>
+
+                </dl>
+            </section>
+            <section class="code">
+                
+                <header><h2 id="sec2">Defining a Grid</h2></header>
+                <p>First we add our grid container and its contents.</p>
+                <div class="code-container code-html">
+                    <code>&lt;div id="grid1"><span class="comment html">We add our &quot;Grid Container&quot; (Parent)
+                        element and &quot;Grid Items&quot; (Children) Elements</span><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">1&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">2&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">3&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">4&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">5&lt;/div><br/>
+                        &lt;/div>
+                    </code>
+                </div>
+                <p>Next we add our CSS.</p>
+    
+                <div class="code-container code-css">
+                    <code>.cell {<span class="comment css">We add background colors and align the numbers to the center of the
+                        divs</span><br/>
+                        &nbsp; &nbsp; background: lightgrey;<br/>
+                        &nbsp; &nbsp; text-align: center;<br/>
+                        }<br/>
+                        <br/>
+                        .cell:nth-of-type(even) { background: darkgrey; } <span class="comment css">Zebra Striping for Grid
+                            Items</span><br/>
+                        <br/>
+                        #grid1 {<br/>
+                        &nbsp; &nbsp; display: grid;<br/>
+                        <!--&nbsp; &nbsp; grid-template-columns: repeat(4, 1fr);<br/>-->
+                        <!--&nbsp; &nbsp; background: #5c7fa3;<br/>-->
+                    }</code>
+                </div>
+                
+                <p>The <span class="css-property">display:</span> property is applied to the Parent element. Once display
+                    grid has been
+                    initiated, the children elements will line up in a single column on the page.</p>
+                <div id="grid1">
+                    <div class="cell">1</div>
+                    <div class="cell">2</div>
+                    <div class="cell">3</div>
+                    <div class="cell">4</div>
+                    <div class="cell">5</div>
+                </div>
+                <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>
+
+            </section>
+            <section class="code">
+                <header><h2 id="sec3">Defining Grid Columns</h2></header>
+                <p>First we add our grid container and its contents.</p>
+                <div class="code-container code-html">
+                    <code>&lt;div id="grid1"><span class="comment html">We add our &quot;Grid Container&quot; (Parent) element
+                        and &quot;Grid Items&quot; (Children) Elements</span><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">1&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">2&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">3&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">4&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">5&lt;/div><br/>
+                        &lt;/div>
+                    </code>
+                </div>
+                <p>Next we add our CSS.</p>
+    
+                <div class="code-container code-css">
+                    <code>
+                        #grid1 {<br/>
+                        &nbsp; &nbsp; display: grid;<br/>
+                        &nbsp; &nbsp; grid-template-columns: 1fr 1fr 1fr;<br/>
+                        &nbsp; &nbsp; background: #5c7fa3;<br/>
+                    }</code>
+                </div>
+                <p>To specify columns, we use the <span class="css-property">grid-template-columns:</span> property.</p>
+                <h4>Available Units of Measurements</h4>
+                <p>Within the <span class="css-property">grid-template-columns:</span> property we can define column widths
+                    with the following properties.</p>
+                <ul>
+                    <li>Fraction Units (fr)</li>
+                    <li>Pixels (px)</li>
+                    <li>Em Units (em)</li>
+                    <li>Rem Units (rem)</li>
+                    <li>Percentages (%)</li>
+                </ul>
+                <span class="quick-tip"><i class="fas fa-lightbulb"></i> Quick Tip: 1fr means the item will take up 1
+                    fraction of the remaining space available space.</span>
+                <p>We end up with a grid that has 3 columns each 1fr (1 Fraction) of the available space.</p>
+                <div id="grid2">
+                <div class="cell">1</div>
+                <div class="cell">2</div>
+                <div class="cell">3</div>
+                <div class="cell">4</div>
+                <div class="cell">5</div>
+            </div>
+                <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>
+
+            </section>
+            <section class="code">
+                
+                <header><h2 id="sec4">Defining Grid Rows</h2></header>
+                <p>First we add our grid container and its contents.</p>
+                <div class="code-container code-html">
+                    <code>&lt;div id="grid1"><span class="comment html">We add our &quot;Grid Container&quot; (Parent) element
+                        and &quot;Grid Items&quot; (Children) Elements</span><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">1&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">2&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">3&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">4&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">5&lt;/div><br/>
+                        &lt;/div>
+                    </code>
+                </div>
+                <p>To specify rows, we use the <span class="css-property">grid-template-columns:</span> property.</p>
+                <span class="quick-tip"><i class="fas fa-lightbulb"></i> Quick Tip: Rows generate automatically but with
+                    <span class="css-property">grid-template-rows:</span> you can specify the height of each row.</span>
+                <p>Now we just add the CSS.</p>
+                <div class="code-container code-css">
+                    <code>
+                        #grid1 {<br/>
+                        &nbsp; &nbsp; display: grid;<br/>
+                        &nbsp; &nbsp; grid-template-columns: repeat(2, 1fr);<br/>
+                        &nbsp; &nbsp; grid-template-rows: 50px 75px 100px;<br />
+                        &nbsp; &nbsp; background: #5c7fa3;<br/>
+                    }</code>
+                </div>
+
+                <span class="quick-tip"><i class="fas fa-lightbulb"></i> Quick Tip: You can also use the
+                    <span class="css-property">grid-auto rows:</span> to specify the height of each row that is
+                    automatically generated.</span>
+                <div class="example">
+                    <div id="grid3">
+                    <div class="cell">1</div>
+                    <div class="cell">2</div>
+                    <div class="cell">3</div>
+                    <div class="cell">4</div>
+                    <div class="cell">5</div>
+                </div>
+            </div>
+                <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>
+
+            </section>
+            <section class="code">
+                
+                <header><h2 id="sec5">Defining Grid &quot;Padding&quot;</h2></header>
+                <p>First we add our grid container and its contents.</p>
+                <div class="code-container code-html">
+                    <code>&lt;div id="grid1"><span class="comment html">We add our &quot;Grid Container&quot; (Parent) element
+                        and &quot;Grid Items&quot; (Children) Elements</span><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">1&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">2&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">3&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">4&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell">5&lt;/div><br/>
+                        &lt;/div>
+                    </code>
+                </div>
+                <p>We can add &quot;padding&quot; or Cell Spacing to our grid by using the
+                    <span class="css-property">grid-row-gap:</span> and <span class="css-property">grid-column-gap:</span>
+                    properties;</p>
+                <p>Next we add our CSS.</p>
+                <div class="code-container code-css">
+                    <code>
+                        #grid1 {<br/>
+                        &nbsp; &nbsp; display: grid;<br/>
+                        &nbsp; &nbsp; grid-template-columns: repeat(3, 1fr);<br/>
+                        grid-row-gap: 50px;<br/>
+                        grid-column-gap: 50px;<br/>
+                        &nbsp; &nbsp; background: #5c7fa3;<br/>
+                    }</code>
+                </div>
+                <span class="quick-tip"><i class="fas fa-lightbulb"></i> Quick Tip: You can use the <span class="css-property">grid-gap:</span> property to define
+                    both row and column gap.</span>
+                
+                <div class="example">
+                    <div id="grid4">
+                    <div class="cell">1</div>
+                    <div class="cell">2</div>
+                    <div class="cell">3</div>
+                    <div class="cell">4</div>
+                    <div class="cell">5</div>
+                </div>
+            </div>
+            </section>
+            <section class="code">
+        
+                <header><h2 id="sec6">Positioning Items With Grid Areas</h2></header>
+                <p>We can position items within a grid in two different ways. The first being with grid areas.</p>
+                
+                
+                <p>First we add our grid container and its contents.</p>
+                <div class="code-container code-html">
+                    <code>&lt;div id="grid1"><span class="comment html">We add our &quot;Grid Container&quot; (Parent) element
+                        and &quot;Grid Items&quot; (Children) Elements</span><br/>
+                        &nbsp; &nbsp; &lt;div class="cell header">header&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell nav">nav&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell sidebar">sidebar&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell main">main&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell footer">footer&lt;/div><br/>
+                        &lt;/div>
+                    </code>
+                </div>
+                <p>Next we define the grid areas within the grid container selector by using the
+                    <span class="css-property">grid-template-areas:</span> property.</p>
+                <div class="code-container code-css">
+                    <code>
+                        #grid1 {<br/>
+                        &nbsp; &nbsp; background: #5c7fa3;<br/>
+                        &nbsp; &nbsp; display: grid;<br/>
+                        &nbsp; &nbsp; grid-template-columns: repeat(3, 1fr);<br/>
+                        &nbsp; &nbsp; grid-template-rows: 25px 25px 100px 25px;<br/>
+                        &nbsp; &nbsp; grid-row-gap: 50px;<br/>
+                        &nbsp; &nbsp; grid-column-gap: 50px;<br/>
+                        &nbsp; &nbsp; grid-areas:<span class="comment css"> Here we define each cell within the grid
+                        with a name. </span><br/>
+                        &nbsp; &nbsp; "header header header"<br/>
+                        &nbsp; &nbsp; "nav nav nav"<br/>
+                        &nbsp; &nbsp; "sidebar main main"<br/>
+                        &nbsp; &nbsp; "footer footer footer";<br/>
+                        }</code>
+                </div>
+                <p>Finally we use the <span class="css-property">grid-areas:</span> to assign each child element to an area
+                    within the grid.</p>
+                <div class="code-container code-css">
+                    <code>
+                        div.header { grid-area: header; }<br/>
+                        div.nav { grid-area: nav; }<br/>
+                        div.sidebar { grid-area: sidebar; }<br/>
+                        div.main { grid-area: main; }<br/>
+                        div.footer { grid-area: footer;}<br/>
+                    </code>
+                </div>
+        
+                <div class="example">
+                    <div id="grid5">
+                        <div class="cell header">header</div>
+                        <div class="cell nav">nav</div>
+                        <div class="cell sidebar">sidebar</div>
+                        <div class="cell main">main</div>
+                        <div class="cell footer">footer</div>
+                    </div>
+                </div>
+                <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>
+
+            </section>
+            <section class="code">
+        
+                <header><h2 id="sec7">Positioning Items by Columns and Rows</h2></header>
+                <p>We can also define the position of child elements with a grid using the
+                    <span class="css-property">grid-column:</span> &amp; <span class="css-property">grid-row:</span>
+                    properties respectively.</p>
+                
+                <p>First we add our grid container and its contents.</p>
+                <div class="code-container code-html">
+                    <code>&lt;div id="grid1"><span class="comment html">We add our &quot;Grid Container&quot; (Parent) element
+                        and &quot;Grid Items&quot; (Children) Elements</span><br/>
+                        &nbsp; &nbsp; &lt;div class="cell header1">header&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell nav1">nav&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell sidebar1">sidebar&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell main1">main&lt;/div><br/>
+                        &nbsp; &nbsp; &lt;div class="cell footer1">footer&lt;/div><br/>
+                        &lt;/div>
+                    </code>
+                </div>
+                <p>Next we define the grid areas within the grid container selector by using the
+                    <span class="css-property">grid-template-areas:</span> property.</p>
+                <div class="code-container code-css">
+                    <code>
+                        #grid1 {<br/>
+                        &nbsp; &nbsp; background: #5c7fa3;<br/>
+                        &nbsp; &nbsp; display: grid;<br/>
+                        &nbsp; &nbsp; grid-template-columns: repeat(3, 1fr);<br/>
+                        &nbsp; &nbsp; grid-template-rows: 25px 25px 100px 25px;<br/>
+                        &nbsp; &nbsp; grid-row-gap: 50px;<br/>
+                        &nbsp; &nbsp; grid-column-gap: 50px;<br/>
+                        }</code>
+                </div>
+                <img id="columnLines" src="../img/grid_lines.png" alt="" width="400" >
+                <p id="columnLinesP">This picture shows how the grid column and row lines are defined. Notice that the left
+                    and top lines start at number &quot;1&quot;, this is important to remember when laying out a grid using
+                    the <span class="css-property">grid-row:</span> &amp; <span class="css-property">grid-column:</span>
+                    properties.</p>
+                <span class="quick-tip clear" ><i class="fas fa-lightbulb"></i> Quick Tip: Grid Rows and Columns Start at &quot;1&quot;.
+                    The first number of <span class="css-property">grid-row:</span> &amp; <span class="css-property">grid-column:</span>
+                    defines the track to start the child element, and the second number defines where that child element ends.
+                </span>
+                <p >Finally we use the <span class="css-property">grid-row:</span> <span class="css-property">grid-column:</span>
+                    to define where each child element starts and ends within the grid using the grid tracks for alignment.</p>
+                <div class="code-container code-css clearfix">
+                    <code>
+                        div.header1 {<br/>
+                        grid-column: 1 / -1;<br/>
+                        }<br/>
+                        div.nav1 {<br/>
+                        grid-row: 2 / 4;<br/>
+                        grid-column: 1 / 2;<br/>
+                        }<br/>
+                        div.main1 {<br/>
+                        grid-row: 2 / 4;<br/>
+                        grid-column: 2 / 3;<br/>
+                        }<br/>
+                        div.sidebar1 {<br/>
+                        grid-row: 2 / 4;<br/>
+                        grid-column: 3 / 4;<br/>
+                        }<br/>
+                        div.footer1 {<br/>
+                        grid-row: 4;<br/>
+                        grid-column: 1 /-1;<br/>
+                        }
+                    </code>
+                </div>
+        
+                <div class="example">
+                    <div id="grid6">
+                        <div class="cell header1">header</div>
+                        <div class="cell nav1">nav</div>
+                        <div class="cell sidebar1">sidebar</div>
+                        <div class="cell main1">main</div>
+                        <div class="cell footer1">footer</div>
+                    </div>
+                </div>
+            <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>
+            </section>
+            <section>
+                <header class="text-center"><h2 id="cheatSheet">Grid Cheat Sheet</h2></header>
+
+                    
+                    <!-- Table only 3 columns but the nested table makes it 4 :D  -->
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Description</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>grid-template-columns</td>
+                                <td>Specifies the size of the columns, and how many columns in a grid layout</td>
+                                <td>
+                                    <table class="nested">
+                                        <thead>
+                                            <tr>
+                                                <th>Values</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>none</td>
+                                                <td>Default value. Columns are created if needed</td>
+                                            </tr>
+                                            <tr>
+                                                <td>auto</td>
+                                                <td>The size of the columns are determined by the size of the container and on the size of the content of the items in the column.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><var>length</var></td>
+                                                <td>Sets the size of the columns, by using a legal length value.<br />Read about length units at <a href="https://www.w3schools.com/cssref/css_units.asp">W3schools</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td>grid-template-rows</td>
+                                <td>Specifies the size of the rows, and how many rows in a grid layout</td>
+                                <td>
+                                    <table class="nested">
+                                        <thead>
+                                            <tr>
+                                                <th>Values</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>none</td>
+                                            <td>Default value. Rows are created if needed</td>
+                                        </tr>
+                                        <tr>
+                                            <td>auto</td>
+                                            <td>The size of the rows are determined by the size of the container and on the size of the content of the items in the column.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><var>length</var></td>
+                                            <td>Sets the size of the rows, by using a legal length value.<br />Read about length units at <a href="https://www.w3schools.com/cssref/css_units.asp">W3schools</a></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>grid-gap</td>
+                                <td>A shorthand property for the grid-row-start and the grid-row-end properties</td>
+                                <td>
+                                    <table class="nested">
+                                        <thead>
+                                            <tr>
+                                                <th>Value</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><var>length</var></td>
+                                                <td>Sets the size of the columns, by using a legal length value.<br />Read about length units at <a href="https://www.w3schools.com/cssref/css_units.asp">W3schools</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>grid-template-areas</td>
+                                <td>Specifies how to display columns and rows, using named grid items</td>
+                                <td>
+                                    <table class="nested">
+                                        <thead>
+                                        <tr>
+                                            <th>Values</th>
+                                            <th>Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>none</td>
+                                                <td>Default value. No named grid areas.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><var>length</var></td>
+                                                <td>A sequence that specifies how each columns and row should display</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                    <p id="tableMobile">To check out this cheat-sheet, please use landscape view, or check it out on a tablet or computer!</p>
+                    <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>
+
+
+            </section>
+        </main>
+        <footer>
+            <nav id="bottom-nav">
+                <a href="../index.html">Home</a>
+                <a href="about.html">How-To</a>
+                <a href="courseObj.html">Course Objectives</a>
+                <a href="credits.html">Credits</a>
+                <a href="form.html">Contact Us</a>
+            </nav>
+            <p><span id="copyright">&copy; Copyright 2018 - 2018 Jesse Harrah. All Rights Reserved</span></p>
+        </footer>
+    
+    
+    </div>
+
+</body>
+</html>

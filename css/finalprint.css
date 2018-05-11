@@ -1,0 +1,16 @@
+/* Jesse Harrah - 5/3/18 */
+
+* {
+    background: white;
+    color: black;
+}
+img {
+    display: none;
+}
+nav#main-nav, nav#bottom-nav {
+    display: none;
+}
+
+
+
+

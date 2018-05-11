@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- Jesse Harrah  5/11/18 -->
+<html lang="en">
+    
+    <head>
+        <title>CSS Grid :: Contact Us</title>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <!--<meta name="description" lang="en" content="SITE DESCRIPTION">-->
+        <meta name="author" content="Jesse Harrah">
+        <!--<meta name="robots" content="index, flow">-->
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/finalprint.css" media="print">
+
+
+        <style>
+            /* Form Styles */
+            form {
+                border: black 1px solid;
+                border-radius: 4px;
+                width: 28%;
+                margin: 2em auto;
+            }
+            label {
+                padding: 0;
+                margin: 0;
+                display: block;
+                float: left;
+                text-align: left;
+            }
+            textarea {
+                float: right;
+                width: 100%;
+            }
+            fieldset {
+                border: none;
+            }
+            
+            button[type="submit"] {
+                display: block;
+                width: 200px;
+                margin: 0.5em auto;
+            }
+            .radio-group {
+                float: left;
+            }
+            
+            input {
+                display: inline-block;
+                float: right;
+                margin:0;
+                padding: 0;
+            }
+            input[type="submit"], input[type="reset"] {
+                float: none;
+                clear: both;
+                font-size: 1em;
+                padding: 2px;
+            }
+            fieldset#buttons {
+                display: block;
+                width: max-content;
+                margin: 0 auto;
+            }
+            
+            @media only screen and (max-width: 768px) {
+                img#newsletter {
+                    float: none;
+                    margin: 0 auto;
+                }
+                form {
+                    width: 50%;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                
+                #comment {
+                    display: block;
+                    width: 90%;
+                    margin: 0 auto;
+                }
+                form {
+                    width: 100%;
+                }
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header id="hero">
+                <h1 id="hero-title">CSS Grid <i class="fas fa-th"></i></h1>
+                <h3 id="hero-subtitle">A CSS Layout Tool</h3>
+
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">How-To</a></li>
+                        <li><a href="courseObj.html">Course Objectives</a></li>
+                        <li><a href="credits.html">Credits</a></li>
+                        <li><a href="form.html">Contact Us</a></li>
+                    </ul>
+                    <br class="clear"/>
+                </nav>
+            </header>
+            <main>
+                <img id="newsletter" src="../img/newsletter.jpg" alt="Sign up for our Newsletter!" width="200"  />
+                <form action="http://webdevbasics.net/scripts/pacific.php" method="post">
+                    <fieldset>
+                        <label for="fName">*First Name: </label>
+                        <input type="text" id="fName" name="userFirst" placeholder="John" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="lName">*Last Name: </label>
+                        <input type="text" id="lName" name="userLast" placeholder="Doe" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">*Email: </label>
+                        <input type="text" id="email" name="userEmail" placeholder="johndoe@example.com" required/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="tel">Phone Number: </label>
+                        <input type="tel" id="tel" name="userTel" placeholder="555-555-1234"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="comment">Questions, Comments?</label>
+                        <textarea name="userComment" id="comment" cols="24" rows="4"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <label id="news-label" for="news" >Would you like to receive our newsletter?</label>
+                        <input type="checkbox" id="news" name="userNewsletter" />
+                    </fieldset>
+                    <fieldset>
+                        <p style="font-size: 1em;">What is your gender?</p>
+                        <label for="male"><input class="radio-group" type="radio" name="userGender" id="male" value="male"> Male</label><br>
+                        <label for="female"><input class="radio-group" type="radio" name="userGender" id="female" value="female"> Female</label><br>
+                        <label for="other"><input class="radio-group" type="radio" name="userGender" id="other" value="other" checked>Other</label>
+                    </fieldset>
+                    <fieldset>
+                        <label for="date">Are you a robot? What is today&apos;s date?</label>
+                        <input type="date" name="captcha-date" id="date" required>
+                    </fieldset>
+                    <fieldset id="buttons">
+                        <input type="reset" name="reset" />
+                        <input type="submit" name="submit" />
+                    </fieldset>
+                </form>
+            </main>
+            <footer>
+                <p>&copy; Copyright 2018 - 2018 Jesse Harrah. All Rights Reserved</p>
+            </footer>
+            
+            
+        </div>
+    </body>
+
+</html>
+
+
+<!--input
+ > date
+ >tel
+ >email
+ >
+
+-->
