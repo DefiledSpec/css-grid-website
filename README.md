@@ -1,2 +1,3 @@
-# css-grid-website
-https://defiledspec.github.io/css-grid-website/
+# Css Grid How-To
+
+[CSS Grid](https://defiledspec.github.io/css-grid-website/)

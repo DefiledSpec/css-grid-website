@@ -9,12 +9,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css"/>
     <link rel="stylesheet" href="../css/finalprint.css" media="print">
-    
-    
-    
-    <style>
-    
-    </style>
 </head>
 <body>
     <div id="wrapper">
@@ -57,11 +51,9 @@
                         <dd>- Grid tracks are each of the columns and rows.</dd>
                     <dt>Grid Cell</dt>
                         <dd>- An individual cell within the grid.</dd>
-
                 </dl>
             </section>
-            <section class="code">
-                
+            <section class="code">           
                 <header><h2 id="sec2">Defining a Grid</h2></header>
                 <p>First we add our grid container and its contents.</p>
                 <div class="code-container code-html">
@@ -75,8 +67,7 @@
                         &lt;/div>
                     </code>
                 </div>
-                <p>Next we add our CSS.</p>
-    
+                <p>Next we add our CSS.</p>  
                 <div class="code-container code-css">
                     <code>.cell {<span class="comment css">We add background colors and align the numbers to the center of the
                         divs</span><br/>
@@ -92,8 +83,7 @@
                         <!--&nbsp; &nbsp; grid-template-columns: repeat(4, 1fr);<br/>-->
                         <!--&nbsp; &nbsp; background: #5c7fa3;<br/>-->
                     }</code>
-                </div>
-                
+                </div>              
                 <p>The <span class="css-property">display:</span> property is applied to the Parent element. Once display
                     grid has been
                     initiated, the children elements will line up in a single column on the page.</p>
@@ -105,7 +95,6 @@
                     <div class="cell">5</div>
                 </div>
                 <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>
-
             </section>
             <section class="code">
                 <header><h2 id="sec3">Defining Grid Columns</h2></header>
@@ -122,7 +111,6 @@
                     </code>
                 </div>
                 <p>Next we add our CSS.</p>
-    
                 <div class="code-container code-css">
                     <code>
                         #grid1 {<br/>
@@ -153,10 +141,8 @@
                 <div class="cell">5</div>
             </div>
                 <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>
-
             </section>
-            <section class="code">
-                
+            <section class="code">             
                 <header><h2 id="sec4">Defining Grid Rows</h2></header>
                 <p>First we add our grid container and its contents.</p>
                 <div class="code-container code-html">
@@ -183,7 +169,6 @@
                         &nbsp; &nbsp; background: #5c7fa3;<br/>
                     }</code>
                 </div>
-
                 <span class="quick-tip"><i class="fas fa-lightbulb"></i> Quick Tip: You can also use the
                     <span class="css-property">grid-auto rows:</span> to specify the height of each row that is
                     automatically generated.</span>
@@ -197,10 +182,8 @@
                 </div>
             </div>
                 <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>
-
             </section>
-            <section class="code">
-                
+            <section class="code">              
                 <header><h2 id="sec5">Defining Grid &quot;Padding&quot;</h2></header>
                 <p>First we add our grid container and its contents.</p>
                 <div class="code-container code-html">
@@ -229,8 +212,7 @@
                     }</code>
                 </div>
                 <span class="quick-tip"><i class="fas fa-lightbulb"></i> Quick Tip: You can use the <span class="css-property">grid-gap:</span> property to define
-                    both row and column gap.</span>
-                
+                    both row and column gap.</span>               
                 <div class="example">
                     <div id="grid4">
                     <div class="cell">1</div>
@@ -241,12 +223,9 @@
                 </div>
             </div>
             </section>
-            <section class="code">
-        
+            <section class="code"> 
                 <header><h2 id="sec6">Positioning Items With Grid Areas</h2></header>
-                <p>We can position items within a grid in two different ways. The first being with grid areas.</p>
-                
-                
+                <p>We can position items within a grid in two different ways. The first being with grid areas.</p>           
                 <p>First we add our grid container and its contents.</p>
                 <div class="code-container code-html">
                     <code>&lt;div id="grid1"><span class="comment html">We add our &quot;Grid Container&quot; (Parent) element
@@ -288,8 +267,7 @@
                         div.main { grid-area: main; }<br/>
                         div.footer { grid-area: footer;}<br/>
                     </code>
-                </div>
-        
+                </div>     
                 <div class="example">
                     <div id="grid5">
                         <div class="cell header">header</div>
@@ -299,16 +277,13 @@
                         <div class="cell footer">footer</div>
                     </div>
                 </div>
-                <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>
-
+                <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>=
             </section>
-            <section class="code">
-        
+            <section class="code">    
                 <header><h2 id="sec7">Positioning Items by Columns and Rows</h2></header>
                 <p>We can also define the position of child elements with a grid using the
                     <span class="css-property">grid-column:</span> &amp; <span class="css-property">grid-row:</span>
-                    properties respectively.</p>
-                
+                    properties respectively.</p>               
                 <p>First we add our grid container and its contents.</p>
                 <div class="code-container code-html">
                     <code>&lt;div id="grid1"><span class="comment html">We add our &quot;Grid Container&quot; (Parent) element
@@ -367,8 +342,7 @@
                         grid-column: 1 /-1;<br/>
                         }
                     </code>
-                </div>
-        
+                </div>      
                 <div class="example">
                     <div id="grid6">
                         <div class="cell header1">header</div>
@@ -381,16 +355,13 @@
             <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>
             </section>
             <section>
-                <header class="text-center"><h2 id="cheatSheet">Grid Cheat Sheet</h2></header>
-
-                    
+                <header class="text-center"><h2 id="cheatSheet">Grid Cheat Sheet</h2></header>                  
                     <!-- Table only 3 columns but the nested table makes it 4 :D  -->
                     <table>
                         <thead>
                             <tr>
                                 <th>Property</th>
-                                <th>Description</th>
-                                
+                                <th>Description</th>                          
                             </tr>
                         </thead>
                         <tbody>
@@ -420,8 +391,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                </td>
-                                
+                                </td>                        
                             </tr>
                             <tr>
                                 <td>grid-template-rows</td>
@@ -450,7 +420,6 @@
                                         </tbody>
                                     </table>
                                 </td>
-
                             </tr>
                             <tr>
                                 <td>grid-gap</td>
@@ -471,7 +440,6 @@
                                         </tbody>
                                     </table>
                                 </td>
-
                             </tr>
                             <tr>
                                 <td>grid-template-areas</td>
@@ -496,15 +464,11 @@
                                         </tbody>
                                     </table>
                                 </td>
-
-                            </tr>
-                        
+                            </tr>                       
                         </tbody>
                     </table>
                     <p id="tableMobile">To check out this cheat-sheet, please use landscape view, or check it out on a tablet or computer!</p>
                     <a class="pageTop" href="#wrapper"><h3>Back to top</h3></a>
-
-
             </section>
         </main>
         <footer>
@@ -516,10 +480,7 @@
                 <a href="form.html">Contact Us</a>
             </nav>
             <p><span id="copyright">&copy; Copyright 2018 - 2018 Jesse Harrah. All Rights Reserved</span></p>
-        </footer>
-    
-    
+        </footer>    
     </div>
-
 </body>
 </html>

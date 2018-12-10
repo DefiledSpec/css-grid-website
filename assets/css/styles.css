@@ -19,47 +19,57 @@ body {
     background: ghostwhite;
 }
 
-
 /* Header */
+
 header#hero {
     background: #5c7fa3;
 
 }
+
 #hero-title {
     font-size: 4em;
     color: orange;
     padding-top: .5em;
     margin: 0;
 }
+
 #hero-subtitle {
     font-size: 2em;
     color: black;
     margin: .5em;
 }
+
 #hero-title, #hero-subtitle {
     text-align: center;
 }
+
 h1#hero-title i {
     color: orange;
 }
+
 /* Navigation */
+
 nav#main-nav {
     width:100%;
     background: #709abb;
 }
+
 nav#main-nav ul {
     width: max-content;
     margin: 0 auto;
     padding: 0;
 }
+
 nav#main-nav ul li {
     display: block;
     float: left;
     padding: 0;
 }
+
 nav#main-nav ul li:last-child {
     border-right: 1px solid rgba(0, 0, 0, .5);
 }
+
 nav#main-nav ul li a {
     display: block;
     border-left: 1px rgba(0, 0, 0, .5) solid;
@@ -69,12 +79,16 @@ nav#main-nav ul li a {
     font-weight: bold;
     color: #2c323c;
 }
+
 nav#main-nav ul li a:hover {
     color: ghostwhite;
     background: rgba(0,0,0,.5);
 }
 
-main { padding: 0 1em; }
+main { 
+	padding: 0 1em;
+}
+
 dl dt {
     font-weight: bold;
 }
@@ -85,6 +99,7 @@ ol {
 }
 
 /* Table */
+
 table {
     margin: 2em;
     border-collapse: collapse;
@@ -94,11 +109,13 @@ table.nested {
     margin: 0;
     background: white;
 }
+
 table.nested tbody tr td {
     border-left: none;
     border-right: none;
     padding: 5px;
 }
+
 table.nested tbody tr td:first-of-type {
     border-right: 1px solid black;
 }
@@ -106,30 +123,33 @@ table.nested tbody tr td:first-of-type {
 tr {
     text-align: center;
 }
+
 tr:nth-of-type(even) {
     background: lightblue;
 }
+
 td {
     border: 1px solid black;
     font-size: 1.02em;
     padding: 4px;
-
 }
 
-
 /* Containers for styling the blocks of code on the page, div is necessary for the borders and background to display properly */
+
 div.code-container {
     padding: 1em;
     border-radius: 4px;
     width: 95%;
     margin: 1em auto;
 }
+
 div.code-css {
     font-size: 1.1em;
 
     background: rgba(100,100, 100, 0.4);
     border-left: 4px solid rgba(0, 200, 0, 0.8);
 }
+
 div.code-html {
     font-size: 1.1em;
     background: rgba(100,100, 100, 0.4);
@@ -137,14 +157,17 @@ div.code-html {
 }
 
 /* Images */
+
 img {
     display: block;
     height: auto;
     max-width: 100%;
 }
+
 /*img::after {*/
     /*clear: both;*/
 /*}*/
+
 figure#jccc {
     margin:  1em auto;
     padding: 1em;
@@ -152,51 +175,58 @@ figure#jccc {
     max-width: 100%;
     float: right;
 }
-figcaption {
 
+figcaption {
     font-style: italic;
     font-size: 0.8em;
 }
+
 figure#jccc img {
     max-width: 100%;
 }
 
 img#newsletter {
     float: right;
-
 }
+
 img#gridTerms {
     float: right;
     margin: 1em auto;
 }
+
 img#grid-garden {
     float: right;
-
 }
+
 img#columnLines {
     float: left;
     margin: 1em auto;
 }
+
 img#gridAreas {
     float: right;
 }
 
 /* Paragraphs */
+
 p {
     font-size: 1.1em;
 }
+
 p#columnLinesP { margin-top: 7em; }
+
 p#tableMobile { display: none; }
 
 footer { text-align: center; }
 
 /* Bottom Nav on "How-To" */
+
 nav#bottom-nav {
     height: 3em;
     background: #709abb;
     line-height: 3em;
-
 }
+
 nav#bottom-nav a {
     padding: .5em 1.5em;
     font-size: 1.1em;
@@ -206,38 +236,47 @@ nav#bottom-nav a {
     font-weight: bold;
     border-left: 1px solid rgba(0, 0, 0, .5);
 }
+
 nav#bottom-nav a:last-of-type {
     border-right: 1px solid rgba(0, 0, 0, .5);
 }
+
 #bottom-nav a:hover {
     color: ghostwhite;
     background: rgba(0,0,0,0.5);
 }
+
 #emailLink, #download {
     display: block;
     width: max-content;
     margin: 0 auto .5em auto;
     font-size: 1.2em;
 }
+
 #download {
     margin-bottom: 1em;
 }
+
 #emailLink a, #download a {
     text-decoration: none;
 }
+
 a:link {
     color: royalblue;
 }
+
 a:visited {
     color: royalblue;
 }
 
 /* Page Top */
+
 .pageTop {
     width: max-content;
     margin: 0 auto;
     text-align: center;
 }
+
 .text-center {
     text-align: center;
 }
@@ -247,17 +286,22 @@ a:visited {
 }
 
 /* Span that highlights css properties */
+
 span.css-property {
     background: lightslategrey;
     font-weight: bold;
     padding: 0 5px;
     color: darkblue;
 }
+
 /* Font-Awesome Icons */
+
 .fa-lightbulb {
     color: yellow;
 }
+
 /* Quick Tip Blocks */
+
 span.quick-tip {
     display: block;
     width: 100%;
@@ -267,31 +311,39 @@ span.quick-tip {
     border-left: 4px solid rgba(0,200, 0, 0.4);
     border-radius: 3px;
 }
+
 /* HTML & CSS Comments for use within the code blocks */
+
 span.comment {
     font-weight: bold;
     color: rgba(2, 45, 59, 0.91);
 }
+
 span.css:before {
     content: '/*';
 }
+
 span.css:after {
     content: '*/';
 }
+
 span.html:before {
     content: '<!--';
 }
+
 span.html:after {
     content: '-->';
 }
 
 /* Example Styles for showing grids */
+
 section.code {
     border-top: black 3px solid;
     border-top: black 3px solid;
     margin-bottom: 1em;
     padding: 0 2em;
 }
+
 section.code header {
     text-align: center;
 }
@@ -303,24 +355,30 @@ section.code header {
     text-align: center;
     border: 1px solid black;
 }
+
 .cell:nth-of-type(even) {
     background: darkgrey;
 }
+
 /* Grid Styles for Example Grids */
+
 #grid1 {
     display: grid;
 }
+
 #grid2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background: #5c7fa3;
 }
+
 #grid3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 50px 75px 100px;
     background: #5c7fa3;
 }
+
 #grid4 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -328,6 +386,7 @@ section.code header {
     grid-row-gap: 1em;
     grid-column-gap: 1em;
 }
+
 #grid5 {
     background: #5c7fa3;
     display: grid;
@@ -340,12 +399,16 @@ section.code header {
             "sidebar main main"
             "footer footer footer";
 }
-div.header { grid-area: header; }
-div.nav { grid-area: nav; }
-div.sidebar { grid-area: sidebar; }
-div.main { grid-area: main; }
-div.footer { grid-area: footer;}
 
+div.header { grid-area: header; }
+
+div.nav { grid-area: nav; }
+
+div.sidebar { grid-area: sidebar; }
+
+div.main { grid-area: main; }
+
+div.footer { grid-area: footer;}
 
 #grid6 {
     background: #5c7fa3;
@@ -354,31 +417,39 @@ div.footer { grid-area: footer;}
     grid-template-rows: 25px 25px 100px 25px;
     grid-gap: .5em;
 }
+
 div.header1 {
     grid-column: 1 / -1;
 }
+
 div.nav1 {
     grid-row: 2 / 4;
     grid-column: 1 / 2;
 }
+
 div.main1 {
     grid-row: 2 / 4;
     grid-column: 2 / 3;
 }
+
 div.sidebar1 {
     grid-row: 2 / 4;
     grid-column: 3 / 4;
 }
+
 div.footer1 {
     grid-row: 4;
     grid-column: 1 /-1;
 }
+
 /* END EXAMPLES */
 
 /* my clearfix */
+
 .clear {
     clear: both;
 }
+
 .clearfix:after {
     clear: both;
     content: '';
@@ -392,7 +463,6 @@ div.footer1 {
          padding: 1em;
     }
     figure#jccc {
-        /*display: none;*/
         float: none;
     }
 
@@ -416,6 +486,7 @@ div.footer1 {
         display: none;
     }
 }
+
 @media only screen and (max-width: 600px) {
     nav#main-nav {
         height: max-content;
